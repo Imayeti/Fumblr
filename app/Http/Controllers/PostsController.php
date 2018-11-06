@@ -10,19 +10,47 @@ class PostsController extends Controller
       $post = new \App\Post();
       $post->title = request('title');
       $post->content = request('content');
-      $post->name = request('name');
+
+      $post->name = \Auth::user()->name;
 
       $post->save();
 
       return redirect('/');
     }
 
-    public function home(){
+    public function welcome(){
 
 
-      $posts = \App\Post::all();
+      $posts = \App\Post::orderBy('updated_at', 'desc')->get();
 
       return view('welcome', compact('posts'));
 
     }
+
+    public function edit($id){
+      $post = \App\Post::find($id);
+
+      return view('edit', compact('post'));
+
+
+    }
+
+    public function update(Request $request, $id){
+      $post = \App\Post::find($id);
+      $post->title = request('title');
+      $post->content = request('content');
+      $post->name = \Auth::user()->name;
+
+
+
+      $post->save();
+
+      return redirect('/');
+
+
+
+
+    }
+
+
 }

@@ -25,23 +25,36 @@
     <form class="text-center" action="/posts" method="post" >
       {{ csrf_field() }}
 
-      <div >
-        <input type="text" name="name" action=value="" placeholder="Name">
+
+      <div class="mb-3">
+          <label for="content">Title</label>
+        <input class="form-control"  type="text" id="title" name="title" value="" placeholder="">
+
 
       </div>
-    <div >
-      <input type="text" name="title" action=value="" placeholder="Title">
+      <div class="field mb-3">
+        <label for="content">Content</label>
+        <textarea class="form-control textarea" type="text" id="content" name="content"></textarea>
 
-    </div>
-    <div >
-      <input type="text" name="content" action=value="" placeholder="Content">
-
-    </div>
+      </div>
     <div class="">
-      <button type="submit" name="button">Post!</button>
+      <button type="submit" class="btn btn-success"name="button">Post!</button>
 
     </div>
   </form>
+
+  <div class="text-center mt-5">
+    <h1 class="mb-3">POSTS</h1>
+
+      @foreach($posts as $post)
+
+
+        <p class="mb-3"> <span style="font-size: 25px;">{{ $post->title }}</span><a class="ml-5" href="/posts/{{$post->id}}/edit">EDIT</a></p>
+
+
+
+      @endforeach
+  </div>
 
 
 </form>

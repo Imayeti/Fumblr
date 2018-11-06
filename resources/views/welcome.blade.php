@@ -10,7 +10,7 @@
       <li>{{ $post->name }}</li>
       <li>{{ $post->content }}</li> -->
 
-    <div class="card mx-auto mb-5 col-lg-6 col-xs-7" >
+    <div class="card mx-auto mb-5 col-7" >
       <div class="card-body">
         <h5 class="card-title text-center">{{ $post->title  }}</h5>
         <h6 class="card-subtitle mb-2 text-muted text-center">By: {{ $post->name }}</h6>

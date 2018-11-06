@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $posts = \App\Post::orderBy('updated_at', 'desc')->get();
+
+
+      return view('home', compact('posts'));
     }
 }
