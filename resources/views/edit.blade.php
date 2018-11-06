@@ -19,7 +19,7 @@
 
     </div>
     <div class="mb-3">
-      <button type="submit" name="button">Edit Post!</button>
+      <button type="submit" class="btn btn-primary" name="button">Edit Post!</button>
 
     </div>
   </form>

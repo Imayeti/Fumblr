@@ -1,7 +1,7 @@
 $theme-colors: (
-  "primary": #3b8686,
-  "light": #cff09e,
-  "success": #79bd9a
+  "primary": #ABD0CE,
+  "light": #fff6ea,
+  "success": #7C7877
 );
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
@@ -15,4 +15,17 @@ $theme-colors: (
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+body {
+color: #7C7877;
+background-color: #fff6ea;
+font-family: 'Abril Fatface', cursive;
+}
+
+
+table {
+max-width: 300px;
+
+margin-left: auto;
+margin-right: auto;
 }
