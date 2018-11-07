@@ -42,6 +42,7 @@ class PostsController extends Controller
       $post->name = \Auth::user()->name;
 
 
+      session()->flash('status', "The post \"<strong>{$post->title}</strong>\" has been updated.");
 
       $post->save();
 

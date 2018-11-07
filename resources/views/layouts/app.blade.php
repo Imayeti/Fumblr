@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -80,6 +80,9 @@
 
         <main class="py-4">
           <div class="container">
+            @if(session()->has('status'))
+              <h1 class="text-center alert alert-success">{!! session()->get('status') !!}</h1>
+            @endif
 
             @yield('content')
           </div>
