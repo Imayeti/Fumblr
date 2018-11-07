@@ -28,7 +28,7 @@ class PostsController extends Controller
     }
 
     public function edit($id){
-      $post = \App\Post::find($id);
+      $post = \App\Post::findOrFail($id);
 
       return view('edit', compact('post'));
 
@@ -36,7 +36,7 @@ class PostsController extends Controller
     }
 
     public function update(Request $request, $id){
-      $post = \App\Post::find($id);
+      $post = \App\Post::findOrFail($id);
       $post->title = request('title');
       $post->content = request('content');
       $post->name = \Auth::user()->name;
@@ -51,7 +51,7 @@ class PostsController extends Controller
     }
 
     public function destroy($id){
-       \App\Post::find($id)->delete();
+       \App\Post::findOrFail($id)->delete();
 
        return redirect('/home');
 

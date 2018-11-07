@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <h1 class="text-center pt-5 mb-4">Create A New Post</h1>
 
     <form class="text-center" action="/posts" method="post" >
@@ -10,13 +11,13 @@
 
       <div class="mb-2 mt-4">
           <label for="content"><h4>Title</h4></label>
-        <input class="form-control mb-4"  type="text" id="title" name="title" value="" placeholder="">
+        <input class="form-control mb-4"  type="text" id="title" name="title" value="" placeholder="" required>
 
 
       </div>
       <div class="field pt-1 mb-4">
         <label for="content"><h4>Content</h4></label>
-        <textarea class="form-control textarea " type="text" id="content" name="content"></textarea>
+        <textarea class="form-control textarea " type="text" id="content" name="content" required></textarea>
 
       </div>
     <div class="pb-4">
@@ -26,14 +27,13 @@
   </form>
 <hr>
   <div class="mx-auto mt-4">
+
+
+
+
+
+
     <h1 class="mb-4 pt-4 text-center">POSTS</h1>
-
-
-
-
-
-
-
         <table class="table " style="width: 100%;">
           <thead>
             @foreach($posts as $post)

@@ -9,13 +9,13 @@
 
     <div class="mb-3">
         <label for="content">Title</label>
-      <input class="form-control"  type="text" id="title" name="title" value="{{ $post->title }}" placeholder="">
+      <input class="form-control"  type="text" id="title" name="title" value="{{ $post->title }}" placeholder="" required>
 
 
     </div>
     <div class="field mb-3">
       <label for="content">Content</label>
-      <textarea class="form-control textarea" type="text" id="content" name="content">{{ $post->content }}</textarea>
+      <textarea class="form-control textarea" type="text" id="content" name="content" required>{{ $post->content }}</textarea>
 
     </div>
     <div class="mb-3">
