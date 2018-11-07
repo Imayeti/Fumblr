@@ -48,7 +48,12 @@ class PostsController extends Controller
       return redirect('/');
 
 
+    }
 
+    public function destroy($id){
+       \App\Post::find($id)->delete();
+
+       return redirect('/home');
 
     }
 
