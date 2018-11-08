@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function store(){
-      $post = new \App\Post();
+      $post = new \App\post();
       $post->title = request('title');
       $post->content = request('content');
 
@@ -21,7 +21,7 @@ class PostsController extends Controller
     public function welcome(){
 
       if(\Auth::check()){
-      $posts = \App\Post::orderBy('updated_at', 'desc')->get()->where('user_id', \Auth::user()->id)->all();
+      $posts = \App\post::orderBy('updated_at', 'desc')->get()->where('user_id', \Auth::user()->id)->all();
 
       // $posts = \DB::table('posts')->where('name', \Auth::user()->name)->first();
       // dd($posts);
@@ -34,7 +34,7 @@ class PostsController extends Controller
     }
 
     public function edit($id){
-      $post = \App\Post::findOrFail($id);
+      $post = \App\post::findOrFail($id);
 
       return view('edit', compact('post'));
 
@@ -42,7 +42,7 @@ class PostsController extends Controller
     }
 
     public function update(Request $request, $id){
-      $post = \App\Post::findOrFail($id);
+      $post = \App\post::findOrFail($id);
       $post->title = request('title');
       $post->content = request('content');
       $post->name = \Auth::user()->name;
@@ -58,7 +58,7 @@ class PostsController extends Controller
     }
 
     public function destroy($id){
-       \App\Post::findOrFail($id)->delete();
+       \App\post::findOrFail($id)->delete();
 
        return redirect('/home');
 

@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $posts = \App\Post::orderBy('updated_at', 'desc')->get()->where('user_id', \Auth::user()->id)->all();
+      $posts = \App\post::orderBy('updated_at', 'desc')->get()->where('user_id', \Auth::user()->id)->all();
 
 
 
