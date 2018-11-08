@@ -53,6 +53,15 @@
           </thead>
         </table>
 
+        @if(count($posts) == 0)
+            <tr>
+                <td >
+
+                  <h4 class="text-center">There are currently no posts</h4>
+
+                </td>
+            </tr>
+        @endif
 
 
 

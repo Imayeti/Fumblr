@@ -12,7 +12,7 @@ class PostsController extends Controller
       $post->content = request('content');
 
       $post->name = \Auth::user()->name;
-
+      $post->user_id = \Auth::user()->id;
       $post->save();
 
       return redirect('/');
@@ -20,10 +20,16 @@ class PostsController extends Controller
 
     public function welcome(){
 
+      if(\Auth::check()){
+      $posts = \App\Post::orderBy('updated_at', 'desc')->get()->where('user_id', \Auth::user()->id)->all();
 
-      $posts = \App\Post::orderBy('updated_at', 'desc')->get();
+      // $posts = \DB::table('posts')->where('name', \Auth::user()->name)->first();
+      // dd($posts);
 
       return view('welcome', compact('posts'));
+    }else{
+      return view('welcome');
+    }
 
     }
 

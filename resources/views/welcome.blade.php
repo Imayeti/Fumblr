@@ -2,8 +2,10 @@
 
 @section('content')
 
-    <h1 class="text-center mb-5 mt-3">All The Fumbls</h1>
 
+    @if(\Auth::check())
+
+    <h1 class="text-center mb-5 mt-3">All The Fumbls</h1>
 
     @foreach($posts as $post)
       <!-- <li>{{ $post->title }}</li>
@@ -21,7 +23,9 @@
 
 
     @endforeach
-
+    @else
+    <h1 class="pt-5 text-center">Please Log In To See Posts!</h1>
+    @endif
 
 
 @endsection
